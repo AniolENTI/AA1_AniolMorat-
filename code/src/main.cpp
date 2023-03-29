@@ -5,6 +5,7 @@
 #include <imgui\imgui_impl_sdl_gl3.h>
 #include <cstdio>
 
+
 #include <GL_framework.h>
 #include <renderers/ExPlacementTriangles.h>
 #include <renderers/ExTexturing.h>
