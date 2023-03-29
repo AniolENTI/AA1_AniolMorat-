@@ -12,4 +12,6 @@ protected:
 	void render(float dt);
 private:
 	Cube* cube;
+	glm::mat4 objMat;
+	glm::vec4 color;
 };

@@ -8,7 +8,6 @@
 
 #include <GL_framework.h>
 #include <renderers/ExPlacementTriangles.h>
-#include <renderers/ExTexturing.h>
 #include <renderers/ExCube.h>
 
 namespace {

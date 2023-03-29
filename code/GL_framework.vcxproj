@@ -142,7 +142,6 @@ xcopy "$(ProjectDir)libs\SDL2.dll" "$(OutDir)" /y /d</Command>
     <ClCompile Include="src\objects\Cube.cpp" />
     <ClCompile Include="src\renderers\ExCube.cpp" />
     <ClCompile Include="src\renderers\ExPlacementTriangles.cpp" />
-    <ClCompile Include="src\renderers\ExTexturing.cpp" />
     <ClCompile Include="src\renderers\Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -152,7 +151,6 @@ xcopy "$(ProjectDir)libs\SDL2.dll" "$(OutDir)" /y /d</Command>
     <ClInclude Include="include\Program.h" />
     <ClInclude Include="include\renderers\ExCube.h" />
     <ClInclude Include="include\renderers\ExPlacementTriangles.h" />
-    <ClInclude Include="include\renderers\ExTexturing.h" />
     <ClInclude Include="include\renderers\Renderer.h" />
     <ClInclude Include="include\stb_image.h" />
   </ItemGroup>
