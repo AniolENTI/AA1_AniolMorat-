@@ -1,7 +1,7 @@
 #include "renderers/AA1.h"
-//
-//#define STB_IMAGE_IMPLEMENTATION
-//#include "stb_image.h"
+
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
 
 AA1::AA1(int width, int height) : Renderer(width, height)
 {
