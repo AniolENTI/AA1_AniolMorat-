@@ -7,6 +7,11 @@ Light::Light(glm::vec3 color, float strength)
 	ambient = this->color * ambientStrength;
 }
 
+Light::~Light()
+{
+
+}
+
 glm::vec3 Light::GetColor()
 {
 	return color;
