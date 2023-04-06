@@ -2,16 +2,19 @@
 #include "Renderer.h"
 #include <Program.h>
 #include <objects/Cube.h>
+#include <renderers/Light.h>
 
-class ExCube : public Renderer
+class AA1 : public Renderer
 {
 public:
-	ExCube(int width, int height);
-	~ExCube();
+	AA1(int width, int height);
+	~AA1();
 protected:
 	void render(float dt);
 private:
 	Cube* cube;
+	Light* light;
 	glm::mat4 objMat;
 	glm::vec4 color;
+	glm::vec3 lightColor;
 };

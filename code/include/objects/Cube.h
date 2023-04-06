@@ -3,7 +3,6 @@
 #include <glm\gtc\type_ptr.hpp>
 #include <Program.h>
 #include <renderers/Renderer.h>
-#include <renderers/Light.h>
 
 class Cube
 {
