@@ -24,5 +24,6 @@ public:
 	//AMBIENT FUNCTIONS
 	float GetAmbientStrenght();
 	glm::vec3 GetAmbient();
-	glm::vec3 GetAmbientResult(glm::vec3 objColor);
+	glm::vec3 GetAmbientResult();
+	void SetAmbientResult(glm::vec3 objColor);
 };
