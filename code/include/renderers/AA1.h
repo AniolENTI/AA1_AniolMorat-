@@ -17,4 +17,5 @@ private:
 	glm::mat4 objMat;
 	glm::vec4 color;
 	glm::vec3 lightColor;
+	glm::vec3 lightPos;
 };

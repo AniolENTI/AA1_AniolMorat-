@@ -15,15 +15,29 @@ private:
 	glm::vec3 result;
 	const float MIN_A_STRENGTH = 0.0f;
 	const float MAX_A_STRENGTH = 1.0f;
+
+	//DIFFUSE LIGHT
+	float diffuseStrength;
+	glm::vec3 diffuse;
+	glm::vec3 lightPosition;
+	glm::vec3 norm;
+	glm::vec3 lightDirection;
+
 public:
 	//GENERAL FUNCTIONS
-	Light(glm::vec3 color, float strength);
+	Light(glm::vec3 color, float strength, glm::vec3 pos, glm::vec3 normal, glm::vec3 fragPos);
 	~Light();
 	glm::vec3 GetColor();
+	glm::vec3 GetResult();
+	void SetResult(glm::vec3 objColor);
 
 	//AMBIENT FUNCTIONS
 	float GetAmbientStrenght();
 	glm::vec3 GetAmbient();
-	glm::vec3 GetAmbientResult();
-	void SetAmbientResult(glm::vec3 objColor);
+
+	//DIFFUSE FUNCTIONS
+	float GetDiffuseStrength();
+	glm::vec3 GetDiffuse();
+	glm::vec3 GetLightPos();
+	void SetLightPos(glm::vec3 pos);
 };

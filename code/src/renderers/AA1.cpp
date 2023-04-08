@@ -10,7 +10,8 @@ AA1::AA1(int width, int height) : Renderer(width, height)
 	color = { 1.0f, 0.3f, 0.6f, 1.0f };
 
 	lightColor = { 0.5f, 0.3f, 0.8f };
-	light = new Light(lightColor, 0.1f);
+	lightPos = { 1.0f, 1.0f, 0.6f };
+	light = new Light(lightColor, 0.1f, lightPos);
 	light->SetAmbientResult(color);
 }
 
