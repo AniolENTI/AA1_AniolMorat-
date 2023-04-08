@@ -15,5 +15,5 @@ void main() {
 
 	vec4 result = ambient * color;
 
-	out_Color = vec4(result, 1.0);
+	out_Color = vec4(result);
 }
