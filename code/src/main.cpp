@@ -8,7 +8,7 @@
 
 #include <GL_framework.h>
 #include <renderers/ExPlacementTriangles.h>
-#include <renderers/ExTexturing.h>
+#include <renderers/AA1.h>
 
 namespace {
 	const int expected_fps = 30;
@@ -74,7 +74,7 @@ int main(int argc, char** argv) {
 
 	// Init scene here
 	///////////////////////////////////////////////
-	Renderer *renderer = new ExTexturing(display_w, display_h);
+	Renderer *renderer = new AA1(display_w, display_h);
 	///////////////////////////////////////////////
 	
 	// Setup ImGui binding
