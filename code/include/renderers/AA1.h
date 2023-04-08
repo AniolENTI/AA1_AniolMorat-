@@ -14,4 +14,5 @@ private:
 	Cube* cube;
 	glm::mat4 objMat;
 	glm::vec4 cubeColor, lightColor;
+	glm::vec3 lightPosition;
 };

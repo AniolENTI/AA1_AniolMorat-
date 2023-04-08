@@ -117,6 +117,11 @@ void Cube::setLightColor(glm::vec4 color)
 	this->lightColor = color;
 }
 
+void Cube::setLightPosition(glm::vec3 pos)
+{
+	this->lightPosition = pos;
+}
+
 void Cube::draw()
 {
 	glBindVertexArray(VAO);
@@ -141,6 +146,10 @@ void Cube::draw()
 	glUniform4f(
 		program->getUniform("light_Color"),
 		lightColor.r, lightColor.g, lightColor.b, lightColor.w
+	);
+	glUniform3f(
+		program->getUniform("light_Position"),
+		lightPosition.x, lightPosition.y, lightPosition.z
 	);
 
 	glDrawElements(GL_TRIANGLE_STRIP, numVerts, GL_UNSIGNED_BYTE, 0);

@@ -9,6 +9,7 @@ AA1::AA1(int width, int height) : Renderer(width, height)
 	objMat = glm::translate(glm::mat4(), glm::vec3(0.0f, 0.0f, -10.0f));
 	cubeColor = { 1.0f, 0.3f, 0.6f, 1.0f };
 	lightColor = { 0.7f, 0.4f, 0.2f, 1.0f };
+	lightPosition = { 0.0f, 0.5f, 0.0f };
 }
 
 AA1::~AA1()
@@ -20,6 +21,7 @@ void AA1::render(float dt)
 {
 	cube->setColor(cubeColor);
 	cube->setLightColor(lightColor);
+	cube->setLightPosition(lightPosition);
 	cube->setTransforms(objMat, cam);
 	cube->draw();
 }

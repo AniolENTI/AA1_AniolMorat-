@@ -14,10 +14,10 @@ void main() {
 	float ambientStrength = 0.1;
 	vec4 ambient = ambientStrength * light_Color;
 
-	vec3 norm = normalize(vert_Normal);
+	vec4 norm = normalize(vert_Normal);
 	vec3 light_Direction = normalize(light_Position - frag_Position);
 	float diff = max(dot(norm, light_Direction), 0.0);
-	vec4 diffuse = {diff * light_Color, 1.0};
+	vec4 diffuse = diff * light_Color;
 
 	vec4 result = (ambient + diffuse) * color;
 	out_Color = result;
