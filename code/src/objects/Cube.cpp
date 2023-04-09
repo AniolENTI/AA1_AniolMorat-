@@ -151,6 +151,10 @@ void Cube::draw()
 		program->getUniform("light_Position"),
 		lightPosition.x, lightPosition.y, lightPosition.z
 	);
+	glUniform3f(
+		program->getUniform("camera_Position"),
+		cam._cameraPoint.x, cam._cameraPoint.y, cam._cameraPoint.z
+	);
 
 	glDrawElements(GL_TRIANGLE_STRIP, numVerts, GL_UNSIGNED_BYTE, 0);
 
