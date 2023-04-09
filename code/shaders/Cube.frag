@@ -15,7 +15,7 @@ void main() {
 	vec4 ambient = ambientStrength * light_Color;
 
 	vec4 norm = normalize(vert_Normal);
-	vec3 light_Direction = normalize(light_Position - frag_Position);
+	vec4 light_Direction = vec4(normalize(light_Position - frag_Position), 0.0);
 	float diff = max(dot(norm, light_Direction), 0.0);
 	vec4 diffuse = diff * light_Color;
 
