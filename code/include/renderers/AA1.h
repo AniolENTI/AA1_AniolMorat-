@@ -26,7 +26,7 @@ private:
 	const float MAX_STRENGTH = 1.0f;
 	const float MIN_STRENGTH = 0.0f;
 
-	bool canEditPosition, canEditColor, canEditStrength = false;
+	bool canEditPosition, canEditColor, canEditStrength, canEditCubeColor;
 
 	float ambientStrength, specularStrength;
 };

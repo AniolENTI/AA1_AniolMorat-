@@ -12,6 +12,11 @@ AA1::AA1(int width, int height) : Renderer(width, height)
 	lightPosition = { 1.0f, 1.0f, -8.0f };
 	ambientStrength = 0.1f;
 	specularStrength = 0.5f;
+
+	canEditPosition = false;
+	canEditColor = false;
+	canEditStrength = false;
+	canEditCubeColor = false;
 }
 
 AA1::~AA1()
@@ -85,6 +90,26 @@ void AA1::renderGUI(float dt)
 			&specularStrength,
 			MIN_STRENGTH,
 			MAX_STRENGTH);
+		ImGui::Spacing();
+	}
+
+	ImGui::Checkbox("Color Cub", &canEditCubeColor);
+	ImGui::Spacing();
+	if (canEditCubeColor)
+	{
+		ImGui::Text("COLOR CUB");
+		ImGui::SliderFloat("Vermell",
+			&cubeColor.r,
+			MIN_COLOR,
+			MAX_COLOR);
+		ImGui::SliderFloat("Verd",
+			&cubeColor.g,
+			MIN_COLOR,
+			MAX_COLOR);
+		ImGui::SliderFloat("Blau",
+			&cubeColor.b,
+			MIN_COLOR,
+			MAX_COLOR);
 		ImGui::Spacing();
 	}
 }
