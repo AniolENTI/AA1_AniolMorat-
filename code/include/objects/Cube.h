@@ -13,6 +13,7 @@ public:
 	void setColor(glm::vec4 color);
 	void setLightColor(glm::vec4 color);
 	void setLightPosition(glm::vec3 pos);
+	void setLightStrength(float amb, float spec);
 	void draw();
 private:
 	GLuint VAO;
@@ -23,6 +24,8 @@ private:
 	CameraTransforms cam;
 	glm::vec4 color, lightColor;
 	glm::vec3 lightPosition;
+
+	float ambientStrength, specularStrength;
 
 	const int numVerts = 24 + 6; // 4 vertex/face * 6 faces + 6 PRIMITIVE RESTART
 };
