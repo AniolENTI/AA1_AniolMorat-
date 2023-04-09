@@ -122,6 +122,12 @@ void Cube::setLightPosition(glm::vec3 pos)
 	this->lightPosition = pos;
 }
 
+void Cube::setLightStrength(float amb, float spec)
+{
+	this->ambientStrength = amb;
+	this->specularStrength = spec;
+}
+
 void Cube::draw()
 {
 	glBindVertexArray(VAO);
@@ -154,6 +160,14 @@ void Cube::draw()
 	glUniform3f(
 		program->getUniform("camera_Position"),
 		cam._cameraPoint.x, cam._cameraPoint.y, cam._cameraPoint.z
+	);
+	glUniform1f(
+		program->getUniform("ambient_Strength"),
+		ambientStrength
+	);
+	glUniform1f(
+		program->getUniform("specular_Strength"),
+		specularStrength
 	);
 
 	glDrawElements(GL_TRIANGLE_STRIP, numVerts, GL_UNSIGNED_BYTE, 0);
