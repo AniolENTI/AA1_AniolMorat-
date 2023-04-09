@@ -11,6 +11,8 @@ public:
 	~Cube();
 	void setTransforms(glm::mat4 objMat, CameraTransforms cam);
 	void setColor(glm::vec4 color);
+	void setLightColor(glm::vec4 color);
+	void setLightPosition(glm::vec3 pos);
 	void draw();
 private:
 	GLuint VAO;
@@ -19,7 +21,8 @@ private:
 
 	glm::mat4 objMat;
 	CameraTransforms cam;
-	glm::vec4 color;
+	glm::vec4 color, lightColor;
+	glm::vec3 lightPosition;
 
 	const int numVerts = 24 + 6; // 4 vertex/face * 6 faces + 6 PRIMITIVE RESTART
 };

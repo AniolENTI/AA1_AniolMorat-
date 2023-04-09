@@ -2,7 +2,6 @@
 #include "Renderer.h"
 #include <Program.h>
 #include <objects/Cube.h>
-#include <renderers/Light.h>
 
 class AA1 : public Renderer
 {
@@ -13,9 +12,7 @@ protected:
 	void render(float dt);
 private:
 	Cube* cube;
-	Light* light;
 	glm::mat4 objMat;
-	glm::vec4 color;
-	glm::vec3 lightColor;
-	glm::vec3 lightPos;
+	glm::vec4 cubeColor, lightColor;
+	glm::vec3 lightPosition;
 };
