@@ -166,6 +166,9 @@ xcopy "$(ProjectDir)libs\SDL2.dll" "$(OutDir)" /y /d</Command>
     <None Include="shaders\Cube.vert" />
     <None Include="shaders\Cube2.frag" />
     <None Include="shaders\Cube2.vert" />
+    <None Include="shaders\Normals.frag" />
+    <None Include="shaders\Normals.geom" />
+    <None Include="shaders\Normals.vert" />
     <None Include="shaders\Texture.frag" />
     <None Include="shaders\Texture.vert" />
     <None Include="shaders\triangle.frag" />

@@ -83,8 +83,9 @@ Cube2::Cube2()
 
 	// Initialize program
 	program = new Program("Cube");
-	program->compileAndAttachShader("shaders/Cube2.vert", GL_VERTEX_SHADER, "vertex");
-	program->compileAndAttachShader("shaders/Cube2.frag", GL_FRAGMENT_SHADER, "fragment");
+	program->compileAndAttachShader("shaders/Normals.vert", GL_VERTEX_SHADER, "vertex");
+	program->compileAndAttachShader("shaders/Normals.geom", GL_GEOMETRY_SHADER, "geometry");
+	program->compileAndAttachShader("shaders/Normals.frag", GL_FRAGMENT_SHADER, "fragment");
 
 	// Bind Attrib locations
 	program->bindAttribLocation(0, "in_Position");
@@ -123,17 +124,13 @@ void Cube2::draw()
 		1, GL_FALSE, glm::value_ptr(objMat)
 	);
 	glUniformMatrix4fv(
-		program->getUniform("mv_Mat"),
-		1, GL_FALSE, glm::value_ptr(cam._modelView)
-	);
-	glUniformMatrix4fv(
 		program->getUniform("mvpMat"),
 		1, GL_FALSE, glm::value_ptr(cam._MVP)
 	);
-	glUniform4f(
+	/*glUniform4f(
 		program->getUniform("color"),
 		color.r, color.g, color.b, color.w
-	);
+	);*/
 
 	glDrawElements(GL_TRIANGLE_STRIP, numVerts, GL_UNSIGNED_BYTE, 0);
 
