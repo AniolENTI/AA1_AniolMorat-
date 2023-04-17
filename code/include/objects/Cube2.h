@@ -19,6 +19,7 @@ private:
 	GLuint VAO;
 	GLuint VBO[3];
 	Program* program;
+	Program* programNormals;
 
 	glm::mat4 objMat;
 	CameraTransforms cam;

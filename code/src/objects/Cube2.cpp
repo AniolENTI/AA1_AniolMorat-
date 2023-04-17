@@ -83,16 +83,23 @@ Cube2::Cube2()
 
 	// Initialize program
 	program = new Program("Cube");
-	program->compileAndAttachShader("shaders/Normals.vert", GL_VERTEX_SHADER, "vertex");
-	program->compileAndAttachShader("shaders/Normals.geom", GL_GEOMETRY_SHADER, "geometry");
-	program->compileAndAttachShader("shaders/Normals.frag", GL_FRAGMENT_SHADER, "fragment");
+	program->compileAndAttachShader("shaders/Cube2.vert", GL_VERTEX_SHADER, "vertex");
+	program->compileAndAttachShader("shaders/Cube2.frag", GL_FRAGMENT_SHADER, "fragment");
+
+	programNormals = new Program("Normals");
+	programNormals->compileAndAttachShader("shaders/Normals.vert", GL_VERTEX_SHADER, "vertex");
+	programNormals->compileAndAttachShader("shaders/Normals.geom", GL_GEOMETRY_SHADER, "geometry");
+	programNormals->compileAndAttachShader("shaders/Normals.frag", GL_FRAGMENT_SHADER, "fragment");
 
 	// Bind Attrib locations
 	program->bindAttribLocation(0, "in_Position");
 	program->bindAttribLocation(1, "in_Normal");
+	programNormals->bindAttribLocation(0, "in_Position");
+	programNormals->bindAttribLocation(1, "in_Normal");
 
 	// Link program
 	program->link();
+	programNormals->link();
 }
 
 Cube2::~Cube2()
@@ -100,6 +107,7 @@ Cube2::~Cube2()
 	glDeleteBuffers(3, VBO);
 	glDeleteVertexArrays(1, &VAO);
 	delete program;
+	delete programNormals;
 }
 
 void Cube2::setTransforms(glm::mat4 objMat, CameraTransforms cam)
@@ -124,16 +132,35 @@ void Cube2::draw()
 		1, GL_FALSE, glm::value_ptr(objMat)
 	);
 	glUniformMatrix4fv(
+		program->getUniform("mv_Mat"),
+		1, GL_FALSE, glm::value_ptr(cam._modelView)
+	);
+	glUniformMatrix4fv(
 		program->getUniform("mvpMat"),
 		1, GL_FALSE, glm::value_ptr(cam._MVP)
 	);
-	/*glUniform4f(
+	glUniform4f(
 		program->getUniform("color"),
 		color.r, color.g, color.b, color.w
-	);*/
+	);
 
 	glDrawElements(GL_TRIANGLE_STRIP, numVerts, GL_UNSIGNED_BYTE, 0);
 
 	program->unuse();
+
+	programNormals->use();
+	glUniformMatrix4fv(
+		programNormals->getUniform("objMat"),
+		1, GL_FALSE, glm::value_ptr(objMat)
+	);
+	glUniformMatrix4fv(
+		programNormals->getUniform("mvpMat"),
+		1, GL_FALSE, glm::value_ptr(cam._MVP)
+	);
+
+	glDrawElements(GL_TRIANGLE_STRIP, numVerts, GL_UNSIGNED_BYTE, 0);
+
+	programNormals->unuse();
+
 	glBindVertexArray(0);
 }
