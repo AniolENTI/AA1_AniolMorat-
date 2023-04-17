@@ -10,6 +10,7 @@
 #include <renderers/ExPlacementTriangles.h>
 #include <renderers/AA1.h>
 #include <renderers/ExGeometry.h>
+#include <renderers/ExNormal.h>
 
 namespace {
 	const int expected_fps = 30;
@@ -75,7 +76,7 @@ int main(int argc, char** argv) {
 
 	// Init scene here
 	///////////////////////////////////////////////
-	Renderer *renderer = new ExGeometry(display_w, display_h);
+	Renderer *renderer = new ExNormal(display_w, display_h);
 	///////////////////////////////////////////////
 	
 	// Setup ImGui binding

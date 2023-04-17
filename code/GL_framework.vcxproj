@@ -140,8 +140,9 @@ xcopy "$(ProjectDir)libs\SDL2.dll" "$(OutDir)" /y /d</Command>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\objects\Axis.cpp" />
     <ClCompile Include="src\objects\Cube.cpp" />
-    <ClCompile Include="src\renderers\AA1.cpp" />
+    <ClCompile Include="src\objects\Cube2.cpp" />
     <ClCompile Include="src\renderers\ExGeometry.cpp" />
+    <ClCompile Include="src\renderers\ExNormal.cpp" />
     <ClCompile Include="src\renderers\ExPlacementTriangles.cpp" />
     <ClCompile Include="src\renderers\Renderer.cpp" />
   </ItemGroup>
@@ -149,9 +150,10 @@ xcopy "$(ProjectDir)libs\SDL2.dll" "$(OutDir)" /y /d</Command>
     <ClInclude Include="include\GL_framework.h" />
     <ClInclude Include="include\objects\Axis.h" />
     <ClInclude Include="include\objects\Cube.h" />
+    <ClInclude Include="include\objects\Cube2.h" />
     <ClInclude Include="include\Program.h" />
-    <ClInclude Include="include\renderers\AA1.h" />
     <ClInclude Include="include\renderers\ExGeometry.h" />
+    <ClInclude Include="include\renderers\ExNormal.h" />
     <ClInclude Include="include\renderers\ExPlacementTriangles.h" />
     <ClInclude Include="include\renderers\Renderer.h" />
     <ClInclude Include="include\stb_image.h" />
@@ -162,6 +164,8 @@ xcopy "$(ProjectDir)libs\SDL2.dll" "$(OutDir)" /y /d</Command>
     <None Include="shaders\Axis.vert" />
     <None Include="shaders\Cube.frag" />
     <None Include="shaders\Cube.vert" />
+    <None Include="shaders\Cube2.frag" />
+    <None Include="shaders\Cube2.vert" />
     <None Include="shaders\Texture.frag" />
     <None Include="shaders\Texture.vert" />
     <None Include="shaders\triangle.frag" />
