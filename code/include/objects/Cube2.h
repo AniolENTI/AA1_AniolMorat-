@@ -11,9 +11,6 @@ public:
 	~Cube2();
 	void setTransforms(glm::mat4 objMat, CameraTransforms cam);
 	void setColor(glm::vec4 color);
-	void setLightColor(glm::vec4 color);
-	void setLightPosition(glm::vec3 pos);
-	void setLightStrength(float amb, float spec);
 	void draw();
 private:
 	GLuint VAO;

@@ -144,6 +144,8 @@ xcopy "$(ProjectDir)libs\SDL2.dll" "$(OutDir)" /y /d</Command>
     <ClCompile Include="src\renderers\ExGeometry.cpp" />
     <ClCompile Include="src\renderers\ExNormal.cpp" />
     <ClCompile Include="src\renderers\ExPlacementTriangles.cpp" />
+    <ClCompile Include="src\renderers\ExReflection.cpp" />
+    <ClCompile Include="src\renderers\ExTransparency.cpp" />
     <ClCompile Include="src\renderers\Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +157,8 @@ xcopy "$(ProjectDir)libs\SDL2.dll" "$(OutDir)" /y /d</Command>
     <ClInclude Include="include\renderers\ExGeometry.h" />
     <ClInclude Include="include\renderers\ExNormal.h" />
     <ClInclude Include="include\renderers\ExPlacementTriangles.h" />
+    <ClInclude Include="include\renderers\ExReflection.h" />
+    <ClInclude Include="include\renderers\ExTransparency.h" />
     <ClInclude Include="include\renderers\Renderer.h" />
     <ClInclude Include="include\stb_image.h" />
   </ItemGroup>
