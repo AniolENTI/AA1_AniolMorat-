@@ -3,7 +3,7 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
-TexturePlane::TexturePlane(int width, int height, glm::vec3 topRight, glm::vec3 topLeft, glm::vec3 botLeft, glm::vec3 botRight) : Renderer(width, height)
+TexturePlane::TexturePlane(int width, int height, glm::vec3 topRight, glm::vec3 topLeft, glm::vec3 botLeft, glm::vec3 botRight, char* path) : Renderer(width, height)
 {
 	float vertices[]{
 		//Positions								//Texture coords
@@ -57,7 +57,7 @@ TexturePlane::TexturePlane(int width, int height, glm::vec3 topRight, glm::vec3 
 
 	//Load image in CPU
 	int imgWidth, imgHeight, nrCannels;
-	unsigned char* data = stbi_load("textures/container.jpg",
+	unsigned char* data = stbi_load(path,
 		&imgWidth,
 		&imgHeight,
 		&nrCannels,

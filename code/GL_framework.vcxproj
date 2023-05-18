@@ -181,6 +181,9 @@ xcopy "$(ProjectDir)libs\SDL2.dll" "$(OutDir)" /y /d</Command>
     <None Include="shaders\triangle.geom" />
     <None Include="shaders\triangle.vert" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="textures\container.jpg" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

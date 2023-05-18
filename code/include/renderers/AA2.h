@@ -12,6 +12,7 @@ public:
 	void render(float dt) override;
 private:
 	Cube2* cub;
-	std::vector<TexturePlane>textures;
+	std::vector<TexturePlane*> textures;
+	char* filepath;
 };
 

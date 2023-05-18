@@ -5,11 +5,10 @@
 class TexturePlane : public Renderer
 {
 public:
-	TexturePlane(int width, int height, glm::vec3 topRight, glm::vec3 topLeft, glm::vec3 botLeft, glm::vec3 botRight);
+	TexturePlane(int width, int height, glm::vec3 topRight, glm::vec3 topLeft, glm::vec3 botLeft, glm::vec3 botRight, char* path);
 	~TexturePlane();
 	void render(float dt) override;
 private:
-	//Cube* cube;
 	GLuint VAO;
 	GLuint VBO;
 	GLuint EBO;
